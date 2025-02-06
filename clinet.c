@@ -6,8 +6,13 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 20:30:05 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/06 20:31:30 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/06 20:36:33 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+int     main(int argc, char **argv)
+{
+    
+}
