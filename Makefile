@@ -20,7 +20,8 @@ all: libft $(SERVER_TARGET) $(CLIENT_TRGET)
 
 libft: $(LIBFT)
 
-$(LIBFT)
+$(LIBFT):
+	echo "Building libft"
 	@$(MAKE) -C $(libftdir) bonus
 
 $(SERVER_TARGET): libft/libft.a $(SERVER_OBJS) | libft
