@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 20:30:05 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/06 20:36:33 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/08 15:59:28 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 int     main(int argc, char **argv)
 {
-    
+    if (argc == 3)
+    {
+        ft_printf("pid = %d\n", argv[1]);
+    }
+    return (0);
 }
