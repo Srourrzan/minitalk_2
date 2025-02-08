@@ -1,7 +1,7 @@
 # -*- MakeFile -*_
 
 SERVER_TARGET = server 
-CLIENT_TRGET = client 
+CLIENT_TARGET = client 
 SERVER_SRCS = server.c
 CLIENT_SRCS = client.c
 
@@ -16,7 +16,7 @@ libftdir = libft
 libftname = libft.a
 LIBFT = $(libftdir)/$(libftname)
 
-all: libft $(SERVER_TARGET) $(CLIENT_TRGET)
+all: libft $(SERVER_TARGET) $(CLIENT_TARGET)
 
 libft: $(LIBFT)
 
@@ -27,8 +27,8 @@ $(LIBFT):
 $(SERVER_TARGET): libft/libft.a $(SERVER_OBJS) | libft
 	$(CC) $(CFLAGS) $(SERVER_OBJS) $(LIBFT) -o $(SERVER_TARGET)
 
-$(CLIENT_TRGET): libft/libft.a $(CLIENT_OBJS) | libft
-	$(CC) $(CFLAGS) $(CLIENT_OBJS) $(LIBFT) -o $(CLIENT_TRGET)
+$(CLIENT_TARGET): libft/libft.a $(CLIENT_OBJS) | libft
+	$(CC) $(CFLAGS) $(CLIENT_OBJS) $(LIBFT) -o $(CLIENT_TARGET)
 
 $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -42,7 +42,7 @@ clean:
 	$(MAKE) -C $(libftdir) clean
 
 fclean: clean
-	rm -f $(SERVER_TARGET) $(CLIENT_TRGET)
+	rm -f $(SERVER_TARGET) $(CLIENT_TARGET)
 	$(MAKE) -C $(libftdir) fclean
 
 re: fclean all
