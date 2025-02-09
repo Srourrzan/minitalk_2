@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 20:30:23 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/08 21:08:09 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/09 18:18:29 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@
 void    ft_send_message(int pid, char *message);
 void    ft_send_char(int pid, char c_);
 void    ft_recieve_message(int signal_, siginfo_t *siginfo, void *context);
+void    ft_g_set(int signal_);
 
 #endif
