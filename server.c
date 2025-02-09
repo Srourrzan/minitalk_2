@@ -6,7 +6,7 @@
 /*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 15:09:35 by rsrour            #+#    #+#             */
-/*   Updated: 2025/02/08 20:58:11 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/02/09 20:17:25 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 void    ft_recieve_message(int signal_, siginfo_t *siginfo, void *context)
 {
+    static t_message    *head;
+    t_message           *curr;
+    
+    if (head == NULL)
+        head = ft_init_message(siginfo->si_pid);
     (void)context;
-    ft_printf("signal = %d\n", signal_);
-    ft_printf("siginfo->si_pid = %d\n", siginfo->si_pid);
     if (signal_ == SIGUSR1)
-        write(1, "0", 1);
+        curr->buff |= 1;
+    curr->bit_count++;
     if (signal_ == SIGUSR2)
         write(1, "1", 1);
+    kill(siginfo->si_pid, SIGUSR1);
 }
 
 int     main()
