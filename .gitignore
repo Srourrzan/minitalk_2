@@ -3,3 +3,4 @@ client
 server
 test.c
 a.out
+*.code-workspace
